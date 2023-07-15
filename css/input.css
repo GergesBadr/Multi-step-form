@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .bg-sidebar {
+    background-image: url("../assets/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  @media (min-width: 768px) {
+    .bg-sidebar {
+      background-image: url("../assets/bg-sidebar-desktop.svg");
+      background-size: unset;
+    }
+  }
+}
+
+@layer components {
+  .step-list-item {
+    @apply flex h-10 w-10 items-center justify-center rounded-full border border-magnolia text-lg font-bold text-white;
+  }
+  .step-list-item.active {
+    @apply border-none bg-Light-blue text-slate-700;
+  }
+  .heading {
+    @apply mb-2 text-3xl font-bold text-marine-blue;
+  }
+  .sub-heading {
+    @apply text-lg text-cool-gray;
+  }
+  .plan.selected {
+    @apply border-purplish-blue bg-magnolia;
+  }
+  .add-ons.selected-add-ons {
+    @apply border-purplish-blue bg-magnolia;
+  }
+}

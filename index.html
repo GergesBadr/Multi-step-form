@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="accessible multi step form challenge from frontend mentor website"
+    />
+    <title>Multi-step form | Frontend mentor</title>
+    <!-- Favicon -->
+    <link rel="icon" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body
+    class="bg-magnolia pb-5 font-ubuntu md:flex md:min-h-screen md:items-center md:justify-center md:pb-0"
+  >
+    <!-- Main container element -->
+    <div
+      class="flex flex-col md:w-[95%] md:flex-row md:rounded-lg md:bg-white md:p-5 lg:w-[75%] xl:w-[70%]"
+    >
+      <!-- Sidebar -->
+      <div
+        class="bg-sidebar h-44 w-full md:relative md:h-[570px] md:w-[275px] md:shrink-0"
+      >
+        <ul
+          class="mt-7 flex items-center justify-center gap-5 md:ml-7 md:flex-col md:items-start"
+        >
+          <li class="md:flex md:items-center md:gap-5">
+            <span class="step-list-item active">1</span>
+            <div class="hidden uppercase md:flex md:flex-col">
+              <span class="text-sm tracking-wider text-white opacity-60"
+                >Step 1</span
+              >
+              <span class="text-lg font-bold tracking-wider text-white"
+                >Your info</span
+              >
+            </div>
+          </li>
+          <li class="md:flex md:items-center md:gap-5">
+            <span class="step-list-item">2</span>
+            <div class="hidden uppercase md:flex md:flex-col">
+              <span class="text-sm tracking-wider text-white opacity-60"
+                >Step 2</span
+              >
+              <span class="text-lg font-bold tracking-wider text-white"
+                >Select plan</span
+              >
+            </div>
+          </li>
+          <li class="md:flex md:items-center md:gap-5">
+            <span class="step-list-item">3</span>
+            <div class="hidden uppercase md:flex md:flex-col">
+              <span class="text-sm tracking-wider text-white opacity-60"
+                >Step 3</span
+              >
+              <span class="text-lg font-bold tracking-wider text-white"
+                >Add-ons</span
+              >
+            </div>
+          </li>
+          <li class="md:flex md:items-center md:gap-5">
+            <span class="step-list-item">4</span>
+            <div class="hidden uppercase md:flex md:flex-col">
+              <span class="text-sm tracking-wider text-white opacity-60"
+                >Step 4</span
+              >
+              <span class="text-lg font-bold tracking-wider text-white"
+                >Summary</span
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- Element that has all the steps -->
+      <div
+        class="mx-auto -mt-[85px] w-[90%] rounded-lg bg-white px-4 py-6 shadow-xl md:relative md:mt-0 md:w-full md:px-14 md:shadow-none"
+      >
+        <!-- Step 1 -->
+        <div id="step-one-sec" class="all-steps">
+          <h1 class="heading">Personal info</h1>
+          <p class="sub-heading">
+            Please provide your name, email address, and phone number.
+          </p>
+          <form action="" class="mt-6">
+            <div class="group relative mb-4 flex flex-col gap-2 pb-5">
+              <label for="name-input" class="text-marine-blue">Name</label>
+              <input
+                type="text"
+                id="name-input"
+                name="name"
+                autocomplete="name"
+                required
+                placeholder="e.g. Stephen King"
+                aria-invalid="true"
+                class="rounded-md border border-light-gray px-4 py-2 text-marine-blue outline-purplish-blue duration-200 group-[.has-error]:border-strawberry-red"
+              />
+              <span
+                class="absolute -bottom-1 left-0 hidden text-sm font-medium text-strawberry-red duration-200 group-[.has-error]:block"
+                >Error: name field can't be empty</span
+              >
+            </div>
+            <div class="group relative mb-4 flex flex-col gap-2 pb-5">
+              <label for="email-input" class="text-marine-blue"
+                >Email Address</label
+              >
+              <input
+                type="text"
+                id="email-input"
+                name="email"
+                autocomplete="email"
+                required
+                placeholder="e.g. stephenking@lorem.com"
+                aria-invalid="true"
+                class="rounded-md border border-light-gray px-4 py-2 text-marine-blue outline-purplish-blue duration-200 group-[.has-error]:border-strawberry-red"
+              />
+              <span
+                class="absolute -bottom-1 left-0 hidden text-sm font-medium text-strawberry-red duration-200 group-[.has-error]:block"
+                >Error: Must be a valid email</span
+              >
+            </div>
+            <div class="group relative mb-4 flex flex-col gap-2 pb-5">
+              <label for="phone-number-input" class="text-marine-blue"
+                >Phone Number</label
+              >
+              <input
+                type="text"
+                id="phone-number-input"
+                name="phone-number"
+                required
+                placeholder="e.g. +1 234 567 890"
+                aria-invalid="true"
+                class="rounded-md border border-light-gray px-4 py-2 text-marine-blue outline-purplish-blue duration-200 group-[.has-error]:border-strawberry-red"
+              />
+              <span
+                class="absolute -bottom-1 left-0 hidden text-sm font-medium text-strawberry-red duration-200 group-[.has-error]:block"
+                >Error: phone number can't be empty</span
+              >
+            </div>
+          </form>
+        </div>
+        <!-- Step 2 -->
+        <div class="all-steps hidden">
+          <h1 class="heading">Select your plan</h1>
+          <p class="sub-heading">
+            You have the option of monthly or yearly billing.
+          </p>
+          <div class="md:grid md:grid-cols-3 md:gap-4">
+            <button
+              role="checkbox"
+              aria-checked="false"
+              class="plan mt-4 flex w-full gap-4 rounded-lg border p-5 md:flex-col md:gap-12 md:p-2 lg:p-5"
+            >
+              <div>
+                <img
+                  src="./assets/icon-arcade.svg"
+                  alt="arcade plan"
+                  class="w-12"
+                />
+              </div>
+              <div class="text-left">
+                <span
+                  aria-hidden="true"
+                  class="plan-name block text-lg font-bold tracking-wider text-marine-blue md:text-base md:tracking-normal lg:text-lg lg:tracking-wider"
+                  >Arcade</span
+                >
+                <span id="arcade-price" class="plan-price block text-cool-gray"
+                  >9$/mo</span
+                >
+                <span class="year-offer hidden font-medium text-marine-blue"
+                  >2 months free</span
+                >
+              </div>
+            </button>
+            <button
+              role="checkbox"
+              aria-checked="false"
+              class="plan mt-4 flex w-full gap-4 rounded-lg border p-5 md:flex-col md:gap-12 md:p-2 lg:p-5"
+            >
+              <div>
+                <img
+                  src="./assets/icon-advanced.svg"
+                  alt="advanced plan"
+                  class="w-12"
+                />
+              </div>
+              <div class="text-left">
+                <span
+                  aria-hidden="true"
+                  class="plan-name block text-lg font-bold tracking-wider text-marine-blue md:text-base md:tracking-normal lg:text-lg lg:tracking-wider"
+                  >Advanced</span
+                >
+                <span
+                  id="advanced-price"
+                  class="plan-price block text-cool-gray"
+                  >12$/mo</span
+                >
+                <span class="year-offer hidden font-medium text-marine-blue"
+                  >2 months free</span
+                >
+              </div>
+            </button>
+            <button
+              role="checkbox"
+              aria-checked="false"
+              class="plan mt-4 flex w-full gap-4 rounded-lg border p-5 md:flex-col md:gap-12 md:p-2 lg:p-5"
+            >
+              <div>
+                <img src="./assets/icon-pro.svg" alt="pro plan" class="w-12" />
+              </div>
+              <div class="text-left">
+                <span
+                  aria-hidden="true"
+                  class="plan-name block text-lg font-bold tracking-wider text-marine-blue md:text-base md:tracking-normal lg:text-lg lg:tracking-wider"
+                  >Pro</span
+                >
+                <span id="pro-price" class="plan-price block text-cool-gray"
+                  >15$/mo</span
+                >
+                <span class="year-offer hidden font-medium text-marine-blue"
+                  >2 months free</span
+                >
+              </div>
+            </button>
+          </div>
+          <div
+            class="mt-6 flex items-center justify-center gap-4 rounded-lg bg-magnolia py-4"
+          >
+            <span
+              id="monthly"
+              class="text-lg font-medium text-marine-blue duration-200"
+              >Monthly</span
+            >
+            <button
+              role="switch"
+              aria-checked="false"
+              aria-label="toggle between monthly and yearly plans, on is yearly and off is monthly."
+              id="toggle-plan"
+              class="relative h-6 w-12 rounded-3xl bg-marine-blue before:absolute before:left-1 before:top-1/2 before:h-4 before:w-4 before:-translate-y-1/2 before:rounded-full before:bg-white before:duration-200 focus:ring-2 focus:ring-offset-2"
+            ></button>
+            <span
+              id="yearly"
+              class="text-lg font-medium text-cool-gray duration-200"
+              >Yearly</span
+            >
+          </div>
+          <span
+            id="plans-error"
+            class="mt-2 hidden text-sm font-medium text-strawberry-red"
+            >Error: must choose at least one plan.</span
+          >
+        </div>
+        <!-- Step 3 -->
+        <div class="all-steps hidden">
+          <h1 class="heading">Pick add-ons</h1>
+          <p class="sub-heading">
+            Add-ons help enhance your gaming experience.
+          </p>
+          <div
+            class="add-ons mt-6 flex cursor-pointer items-center gap-3 rounded-lg border border-light-gray px-4 py-2 md:gap-8 md:py-3"
+          >
+            <div class="relative">
+              <input
+                role="checkbox"
+                type="checkbox"
+                aria-describedby="online-service-info online-service-price"
+                name="online-service-add-ons"
+                id="online-service-add-ons"
+                class="peer h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-light-gray duration-200 checked:border-none checked:bg-purplish-blue"
+              />
+              <img
+                src="./assets/icon-checkmark.svg"
+                alt="checkmark icon"
+                class="absolute left-1 top-[6px] w-4 rotate-90 opacity-0 duration-200 peer-checked:rotate-0 peer-checked:opacity-100"
+              />
+            </div>
+            <div id="online-service-info">
+              <span
+                class="add-on-name block font-bold text-marine-blue md:text-lg"
+                >Online service</span
+              >
+              <span class="text-cool-gray">Access to multiplayer games</span>
+            </div>
+            <span
+              id="online-service-price"
+              class="add-on-price ml-auto text-purplish-blue"
+              >+1$/mo</span
+            >
+          </div>
+          <div
+            class="add-ons mt-6 flex cursor-pointer items-center gap-3 rounded-lg border border-light-gray px-4 py-2 md:gap-8 md:py-3"
+          >
+            <div class="relative">
+              <input
+                role="checkbox"
+                type="checkbox"
+                aria-describedby="larger-storage-info larger-storage-price"
+                name="larger-storage-add-ons"
+                id="larger-storage-add-ons"
+                class="peer h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-light-gray duration-200 checked:border-none checked:bg-purplish-blue"
+              />
+              <img
+                src="./assets/icon-checkmark.svg"
+                alt="checkmark icon"
+                class="absolute left-1 top-[6px] w-4 rotate-90 opacity-0 duration-200 peer-checked:rotate-0 peer-checked:opacity-100"
+              />
+            </div>
+            <div id="larger-storage-info">
+              <span
+                class="add-on-name block font-bold text-marine-blue md:text-lg"
+                >Larger storage</span
+              >
+              <span class="text-cool-gray">Extra 1TB of cloud save</span>
+            </div>
+            <span
+              id="larger-storage-price"
+              class="add-on-price ml-auto text-purplish-blue"
+              >+2$/mo</span
+            >
+          </div>
+          <div
+            class="add-ons mt-6 flex cursor-pointer items-center gap-3 rounded-lg border border-light-gray px-4 py-2 md:gap-8 md:py-3"
+          >
+            <div class="relative">
+              <input
+                role="checkbox"
+                type="checkbox"
+                aria-describedby="customizable-profile-info customizable-profile-price"
+                name="customizable-profile-add-ons"
+                id="customizable-profile-add-ons"
+                class="peer h-6 w-6 cursor-pointer appearance-none rounded-md border-2 border-light-gray duration-200 checked:border-none checked:bg-purplish-blue"
+              />
+              <img
+                src="./assets/icon-checkmark.svg"
+                alt="checkmark icon"
+                class="absolute left-1 top-[6px] w-4 rotate-90 opacity-0 duration-200 peer-checked:rotate-0 peer-checked:opacity-100"
+              />
+            </div>
+            <div id="customizable-profile-info">
+              <span
+                class="add-on-name block font-bold text-marine-blue md:text-lg"
+                >Customizable Profile</span
+              >
+              <span class="text-cool-gray">Custom theme on your profile</span>
+            </div>
+            <span
+              id="customizable-profile-price"
+              class="add-on-price ml-auto text-purplish-blue"
+              >+2$/mo</span
+            >
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div id="finishing-up" class="all-steps hidden">
+          <h1 class="heading">Finishing up</h1>
+          <p class="sub-heading">
+            Double-check everything looks OK before confirming.
+          </p>
+          <div id="last-step-content"></div>
+        </div>
+        <!-- End -->
+        <div id="end" class="hidden py-14 text-center">
+          <img
+            src="./assets/icon-thank-you.svg"
+            alt="white checkmark in red background"
+            class="mx-auto mb-6 w-16 md:w-auto"
+          />
+          <h1 class="heading">Thank you!</h1>
+          <p class="sub-heading">
+            Thanks for confirming your subscription! We hope you have fun using
+            our platform. If you ever need support, please feel free to email us
+            at support@loremgaming.com.
+          </p>
+        </div>
+        <!-- Controls -->
+        <div
+          id="controls"
+          class="mt-5 flex w-full items-center justify-between bg-white"
+        >
+          <button
+            id="go-back-btn"
+            class="hidden text-cool-gray duration-200 hover:text-marine-blue"
+          >
+            Go back
+          </button>
+          <button
+            id="next-step-btn"
+            class="ml-auto rounded-lg bg-marine-blue px-4 py-2 text-white outline-none duration-200 hover:bg-[#174a8c] focus:outline-2 focus:outline-purplish-blue"
+          >
+            Next Step
+          </button>
+          <button
+            id="confirm-btn"
+            class="z-50 ml-auto hidden rounded-lg bg-purplish-blue px-6 py-2 text-white outline-none duration-200 hover:bg-purplish-blue/80 focus:outline-2 focus:outline-purplish-blue"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
