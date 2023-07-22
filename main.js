@@ -284,28 +284,28 @@ plans.forEach((plan) => {
 
 let isMonthly = true;
 togglePlan.addEventListener("click", () => {
-  if (isMonthly) {
-    showEarly();
-  } else {
-    showMonthly();
-  }
+  isMonthly ? showEarly() : showMonthly()
 });
 
 function showEarly() {
-  togglePlan.setAttribute("aria-checked", "true");
+  // Make screen readers and assistive technology knows that it has been clicked
+  togglePlan.setAttribute("aria-pressed", "true");
+  // Handle styles
   monthly.classList.replace("text-marine-blue", "text-cool-gray");
   yearly.classList.replace("text-cool-gray", "text-marine-blue");
   togglePlan.classList.replace("before:left-1", "before:left-7");
   yearOfferSpans.forEach((offer) => {
     offer.classList.remove("hidden");
   });
+  // Change plans value
   arcadePrice.innerText = "90$/yr";
   advancedPrice.innerText = "120$/yr";
   proPrice.innerText = "150$/yr";
   isMonthly = false;
 }
 function showMonthly() {
-  togglePlan.setAttribute("aria-checked", "false");
+  // Make screen readers and assistive technology knows that it has NOT been clicked
+  togglePlan.setAttribute("aria-pressed", "false");
   monthly.classList.replace("text-cool-gray", "text-marine-blue");
   yearly.classList.replace("text-marine-blue", "text-cool-gray");
   togglePlan.classList.replace("before:left-7", "before:left-1");
